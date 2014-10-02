@@ -75,7 +75,6 @@ class CoLlzProvTarget extends CoProvisionerPluginTarget {
          
         $cp = new CoPerson();
         $p  =  $cp->findById($coPersonId);
-        $ids = $p['Identifier'];
         
         $args['conditions']['co_provisioning_target_id'] = $coProvisioningTargetId;
         $lpt = new CoLlzProvTarget();
@@ -83,8 +82,8 @@ class CoLlzProvTarget extends CoProvisionerPluginTarget {
         $jpd = json_encode( $p ); 
         $cmd = $pt['CoLlzProvTarget']['t2'].'OP=QP\&'.'pd='.urlencode($jpd);
         
-        CakeLog::write('debug', 'CoProvisioningTarget ' . print_r($pt  , true) . "  " . $cmd);
-        CakeLog::write('debug', 'CoPerson ' . print_r($ids, true) );
+        // CakeLog::write('debug', 'CoProvisioningTarget ' . print_r($pt  , true) . "  " . $cmd);
+        // CakeLog::write('debug', 'CoPerson ' . print_r($ids, true) );
              
         $output = array();
         $ret2 = null;
